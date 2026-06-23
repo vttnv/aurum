@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Главная</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="header">
+            <img class="logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            <div>
+                <button class="icon-button gold" type="button" onclick="openSheet('qrSheet')" aria-label="Карта пациента">
+                    <i class="ph-light ph-qr-code"></i>
+                </button>
+                <a class="icon-button" href="tel:+70000000000" aria-label="Позвонить в Aurum">
+                    <i class="ph-light ph-phone-call"></i>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="section">
+                <div class="hero-card">
+                    <div>
+                        <span class="badge"><i class="ph-light ph-sparkle"></i> Dental wellness</span>
+                    </div>
+                    <div>
+                        <h1 class="hero-title serif">Спокойная забота о вашей улыбке</h1>
+                        <p class="hero-copy">Личный кабинет пациента Aurum: запись, визиты, рекомендации и документы в одном аккуратном пространстве.</p>
+                    </div>
+                    <div class="balance-panel">
+                        <p class="eyebrow">Ваш статус</p>
+                        <div class="metric">
+                            <strong class="serif">Aurum</strong>
+                            <span>care plan</span>
+                        </div>
+                        <a href="services.html" class="primary-button" style="width:100%;">
+                            Записаться на приём
+                            <i class="ph-light ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <i class="ph-light ph-asterisk asterisk"></i>
+                    <h2 class="section-kicker">Направления</h2>
+                </div>
+                <div class="direction-list">
+                    <a class="direction-link" href="services.html?category=therapy">
+                        <span class="serif">Терапия<small>Лечение кариеса, реставрации, консультации</small></span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </a>
+                    <a class="direction-link" href="services.html?category=hygiene">
+                        <span class="serif">Гигиена<small>Профилактика, Air Flow, реминерализация</small></span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </a>
+                    <a class="direction-link" href="services.html?category=implantology">
+                        <span class="serif">Имплантология<small>Планирование, хирургия, восстановление</small></span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </a>
+                    <a class="direction-link" href="services.html?category=orthopedics">
+                        <span class="serif">Ортопедия<small>Коронки, виниры, комплексные планы</small></span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <i class="ph-light ph-asterisk asterisk"></i>
+                    <h2 class="section-kicker">Специалисты</h2>
+                </div>
+                <div class="doctor-strip hide-scroll">
+                    <article class="doctor-card">
+                        <div class="doctor-photo"><i class="ph-light ph-user-focus text-icon" style="font-size:46px;"></i></div>
+                        <h3 class="serif">А. Саидова</h3>
+                        <p>Терапевт · эстетическая реставрация</p>
+                    </article>
+                    <article class="doctor-card">
+                        <div class="doctor-photo"><i class="ph-light ph-user-focus" style="font-size:46px;"></i></div>
+                        <h3 class="serif">М. Алиев</h3>
+                        <p>Ортопед · цифровое планирование</p>
+                    </article>
+                    <article class="doctor-card">
+                        <div class="doctor-photo"><i class="ph-light ph-user-focus" style="font-size:46px;"></i></div>
+                        <h3 class="serif">Э. Гасанова</h3>
+                        <p>Хирург · имплантолог</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="highlight-card">
+                    <div class="row">
+                        <div>
+                            <p class="eyebrow">Рекомендуем</p>
+                            <h3 class="serif" style="font-size:30px;line-height:0.95;margin-top:8px;">Профессиональная гигиена</h3>
+                            <p>Мягкая профилактика и полировка эмали перед важными событиями или началом лечения.</p>
+                        </div>
+                        <span class="price serif">6 500 ₽</span>
+                    </div>
+                    <a href="services.html?service=hygiene" class="ghost-button" style="width:100%;margin-top:18px;">Подробнее</a>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Основная навигация">
+            <div class="bottom-nav-inner">
+                <a class="nav-link active" href="index.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+                <a class="nav-link" href="services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Каталог</span></a>
+                <a class="nav-link" href="visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <div id="qrSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+            <h2 id="qrTitle" class="serif">Карта пациента</h2>
+            <p>QR-код можно показать администратору для быстрой идентификации и начисления бонусов Aurum.</p>
+            <div class="surface-card" style="display:grid;place-items:center;height:190px;margin-bottom:14px;">
+                <i class="ph-light ph-qr-code" style="font-size:104px;color:var(--champagne-dark);"></i>
+            </div>
+            <button class="primary-button" type="button" style="width:100%;" onclick="hideSheet('qrSheet')">Готово</button>
+        </div>
+    </div>
+
+    <script>
+        function openSheet(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hideSheet(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closeSheet(event) {
+            if (event.target.classList.contains('sheet-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

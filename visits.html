@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Мои визиты</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="header">
+            <a class="icon-button" href="index.html" aria-label="Назад на главную">
+                <i class="ph-light ph-arrow-left"></i>
+            </a>
+            <img class="logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            <a class="icon-button gold" href="services.html" aria-label="Новая запись">
+                <i class="ph-light ph-plus"></i>
+            </a>
+        </header>
+
+        <main>
+            <section class="catalog-toolbar">
+                <p class="eyebrow">Личный кабинет</p>
+                <h1 class="page-title serif">Мои визиты</h1>
+                <p class="page-copy">Записи, документы и рекомендации после приёма — в одном спокойном пространстве.</p>
+                <div class="tabs" role="tablist">
+                    <button class="tab active" type="button" onclick="showTab('upcoming', this)">Предстоящие</button>
+                    <button class="tab" type="button" onclick="showTab('history', this)">История</button>
+                </div>
+            </section>
+
+            <section id="upcoming" class="section visit-panel" style="margin-top:20px;">
+                <div class="visit-list">
+                    <article class="visit-card featured">
+                        <div class="row" style="align-items:flex-start;">
+                            <div class="visit-time">
+                                <span><strong>18</strong>июля</span>
+                            </div>
+                            <div style="flex:1;">
+                                <p class="eyebrow">Подтверждено</p>
+                                <h3 class="serif" style="font-size:27px;line-height:0.98;margin-top:7px;">Профессиональная гигиена</h3>
+                                <p>12:30 · врач-гигиенист Э. Гасанова</p>
+                                <div class="visit-meta">
+                                    <span class="meta-pill">~60 мин</span>
+                                    <span class="meta-pill">Aurum room 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visit-actions">
+                            <button class="primary-button" type="button" onclick="openSheet('rescheduleSheet')">Перенести</button>
+                            <button class="ghost-button" type="button" onclick="openSheet('callSheet')">Позвонить</button>
+                        </div>
+                        <button class="document-link" type="button" onclick="openSheet('cancelSheet')">
+                            <span>Отменить запись</span>
+                            <i class="ph-light ph-warning-circle" style="color:var(--danger);"></i>
+                        </button>
+                    </article>
+
+                    <article class="surface-card">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Подготовка</p>
+                                <h2 class="serif" style="margin:7px 0 0;font-size:27px;line-height:1;">Перед визитом</h2>
+                                <p style="margin-top:8px;color:var(--stone);font-size:12px;line-height:1.55;">Заполните короткую анкету и предупредите врача об аллергиях или изменениях в самочувствии.</p>
+                            </div>
+                            <i class="ph-light ph-clipboard-text" style="font-size:42px;color:var(--mineral);"></i>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="history" class="section visit-panel hidden" style="margin-top:20px;">
+                <div class="visit-list">
+                    <article class="visit-card">
+                        <div class="row" style="align-items:flex-start;">
+                            <div class="visit-time">
+                                <span><strong>02</strong>июня</span>
+                            </div>
+                            <div style="flex:1;">
+                                <p class="eyebrow">Завершено</p>
+                                <h3 class="serif" style="font-size:27px;line-height:0.98;margin-top:7px;">Первичная консультация</h3>
+                                <p>План лечения подготовлен, рекомендована профессиональная гигиена.</p>
+                            </div>
+                        </div>
+                        <button class="document-link" type="button" onclick="openSheet('documentsSheet')">
+                            <span>Документы и план лечения</span>
+                            <i class="ph-light ph-file-text"></i>
+                        </button>
+                        <a class="primary-button" href="services.html" style="width:100%;margin-top:12px;">Повторить запись</a>
+                    </article>
+
+                    <article class="visit-card">
+                        <div class="row" style="align-items:flex-start;">
+                            <div class="visit-time">
+                                <span><strong>14</strong>мая</span>
+                            </div>
+                            <div style="flex:1;">
+                                <p class="eyebrow">Завершено</p>
+                                <h3 class="serif" style="font-size:27px;line-height:0.98;margin-top:7px;">Лечение кариеса</h3>
+                                <p>Восстановление зуба 2.6, контрольный осмотр по рекомендации врача.</p>
+                            </div>
+                        </div>
+                        <button class="document-link" type="button" onclick="openSheet('documentsSheet')">
+                            <span>Рекомендации после лечения</span>
+                            <i class="ph-light ph-file-text"></i>
+                        </button>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Основная навигация">
+            <div class="bottom-nav-inner">
+                <a class="nav-link" href="index.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+                <a class="nav-link" href="services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Каталог</span></a>
+                <a class="nav-link active" href="visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <div id="rescheduleSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="rescheduleTitle">
+            <h2 id="rescheduleTitle" class="serif">Перенести визит</h2>
+            <p>В полной версии приложение покажет свободные окна из YCLIENTS. Для прототипа показываем сценарий как подтверждение логики.</p>
+            <div class="sheet-actions">
+                <a class="primary-button" href="services.html">Выбрать новое время</a>
+                <button class="ghost-button" type="button" onclick="hideSheet('rescheduleSheet')">Оставить как есть</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="callSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="callTitle">
+            <h2 id="callTitle" class="serif">Связаться с Aurum</h2>
+            <p>Администратор поможет уточнить подготовку к визиту, врача или время записи.</p>
+            <div class="sheet-actions">
+                <a class="primary-button" href="tel:+70000000000">Позвонить</a>
+                <button class="ghost-button" type="button" onclick="hideSheet('callSheet')">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancelSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="cancelTitle">
+            <h2 id="cancelTitle" class="serif">Отменить запись?</h2>
+            <p>После отмены это время может стать доступно другим пациентам. В прототипе действие не отправляет данные в клинику.</p>
+            <div class="sheet-actions">
+                <button class="danger-button" type="button" onclick="hideSheet('cancelSheet')">Отменить запись</button>
+                <button class="ghost-button" type="button" onclick="hideSheet('cancelSheet')">Вернуться</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="documentsSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="documentsTitle">
+            <h2 id="documentsTitle" class="serif">Документы визита</h2>
+            <p>Здесь будут храниться план лечения, рекомендации врача, счета и файлы после приёма.</p>
+            <div class="surface-card" style="margin-bottom:12px;">
+                <button class="document-link" type="button"><span>План лечения.pdf</span><i class="ph-light ph-download-simple"></i></button>
+                <button class="document-link" type="button"><span>Рекомендации врача</span><i class="ph-light ph-download-simple"></i></button>
+            </div>
+            <button class="primary-button" type="button" style="width:100%;" onclick="hideSheet('documentsSheet')">Готово</button>
+        </div>
+    </div>
+
+    <script>
+        function showTab(id, button) {
+            document.querySelectorAll('.tab').forEach((tab) => tab.classList.remove('active'));
+            button.classList.add('active');
+            document.querySelectorAll('.visit-panel').forEach((panel) => panel.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function openSheet(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hideSheet(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closeSheet(event) {
+            if (event.target.classList.contains('sheet-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

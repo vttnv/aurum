@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Каталог услуг</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="header">
+            <a class="icon-button" href="index.html" aria-label="Назад на главную">
+                <i class="ph-light ph-arrow-left"></i>
+            </a>
+            <img class="logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            <button class="icon-button gold" type="button" onclick="openSheet('searchSheet')" aria-label="Поиск услуги">
+                <i class="ph-light ph-magnifying-glass"></i>
+            </button>
+        </header>
+
+        <main>
+            <section class="catalog-toolbar">
+                <p class="eyebrow">Каталог</p>
+                <h1 class="page-title serif">Услуги Aurum</h1>
+                <p class="page-copy">Выберите направление, посмотрите ориентир по стоимости и перейдите к удобному времени записи.</p>
+                <div class="chip-row hide-scroll" aria-label="Фильтры категорий">
+                    <button class="chip active" type="button" onclick="filterServices('all', this)">Все</button>
+                    <button class="chip" type="button" onclick="filterServices('therapy', this)">Терапия</button>
+                    <button class="chip" type="button" onclick="filterServices('hygiene', this)">Гигиена</button>
+                    <button class="chip" type="button" onclick="filterServices('orthopedics', this)">Ортопедия</button>
+                    <button class="chip" type="button" onclick="filterServices('surgery', this)">Хирургия</button>
+                    <button class="chip" type="button" onclick="filterServices('diagnostics', this)">Диагностика</button>
+                </div>
+            </section>
+
+            <section class="section" style="margin-top:20px;">
+                <div class="service-list">
+                    <article class="service-card" data-category="therapy">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Терапия</p>
+                                <h3 class="serif">Лечение кариеса</h3>
+                                <p>Бережное восстановление зуба с подбором оттенка и контролем контактов.</p>
+                            </div>
+                            <span class="price serif">от 5 500 ₽</span>
+                        </div>
+                        <div class="service-meta">
+                            <span class="meta-pill">~50 мин</span>
+                            <span class="meta-pill">Консультация</span>
+                            <span class="meta-pill">План лечения</span>
+                        </div>
+                        <button class="primary-button" type="button" style="width:100%;margin-top:14px;" onclick="selectService('Лечение кариеса', 'от 5 500 ₽', '~50 мин')">Выбрать услугу</button>
+                    </article>
+
+                    <article class="service-card" data-category="hygiene">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Гигиена</p>
+                                <h3 class="serif">Профессиональная гигиена</h3>
+                                <p>Комплексная чистка, полировка и рекомендации по домашнему уходу.</p>
+                            </div>
+                            <span class="price serif">6 500 ₽</span>
+                        </div>
+                        <div class="service-meta">
+                            <span class="meta-pill">~60 мин</span>
+                            <span class="meta-pill">Air Flow</span>
+                            <span class="meta-pill">Профилактика</span>
+                        </div>
+                        <button class="primary-button" type="button" style="width:100%;margin-top:14px;" onclick="selectService('Профессиональная гигиена', '6 500 ₽', '~60 мин')">Выбрать услугу</button>
+                    </article>
+
+                    <article class="service-card" data-category="diagnostics">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Диагностика</p>
+                                <h3 class="serif">Первичная консультация</h3>
+                                <p>Осмотр, цифровые снимки по показаниям и понятный маршрут лечения.</p>
+                            </div>
+                            <span class="price serif">2 500 ₽</span>
+                        </div>
+                        <div class="service-meta">
+                            <span class="meta-pill">~30 мин</span>
+                            <span class="meta-pill">План</span>
+                            <span class="meta-pill">Снимки</span>
+                        </div>
+                        <button class="primary-button" type="button" style="width:100%;margin-top:14px;" onclick="selectService('Первичная консультация', '2 500 ₽', '~30 мин')">Выбрать услугу</button>
+                    </article>
+
+                    <article class="service-card" data-category="orthopedics">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Ортопедия</p>
+                                <h3 class="serif">Керамическая коронка</h3>
+                                <p>Эстетичное восстановление формы и функции зуба с цифровым планированием.</p>
+                            </div>
+                            <span class="price serif">от 32 000 ₽</span>
+                        </div>
+                        <div class="service-meta">
+                            <span class="meta-pill">2 визита</span>
+                            <span class="meta-pill">Цифровой дизайн</span>
+                        </div>
+                        <button class="primary-button" type="button" style="width:100%;margin-top:14px;" onclick="selectService('Керамическая коронка', 'от 32 000 ₽', '2 визита')">Выбрать услугу</button>
+                    </article>
+
+                    <article class="service-card" data-category="surgery">
+                        <div class="row">
+                            <div>
+                                <p class="eyebrow">Хирургия</p>
+                                <h3 class="serif">Имплантация</h3>
+                                <p>Планирование и установка импланта с контролем всех этапов восстановления.</p>
+                            </div>
+                            <span class="price serif">от 45 000 ₽</span>
+                        </div>
+                        <div class="service-meta">
+                            <span class="meta-pill">План</span>
+                            <span class="meta-pill">Навигация</span>
+                            <span class="meta-pill">Реабилитация</span>
+                        </div>
+                        <button class="primary-button" type="button" style="width:100%;margin-top:14px;" onclick="selectService('Имплантация', 'от 45 000 ₽', 'по плану')">Выбрать услугу</button>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="surface-card">
+                    <div class="row">
+                        <div>
+                            <p class="eyebrow">Скоро</p>
+                            <h2 class="serif" style="margin:7px 0 0;font-size:27px;line-height:1;">Домашний уход</h2>
+                            <p style="margin-top:8px;color:var(--stone);font-size:12px;line-height:1.55;">В полной версии здесь появятся товары, рекомендованные врачом: щётки, пасты и наборы после лечения.</p>
+                        </div>
+                        <i class="ph-light ph-shopping-bag-open" style="font-size:42px;color:var(--mineral);"></i>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav" aria-label="Основная навигация">
+            <div class="bottom-nav-inner">
+                <a class="nav-link" href="index.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+                <a class="nav-link active" href="services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Каталог</span></a>
+                <a class="nav-link" href="visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+            </div>
+        </nav>
+    </div>
+
+    <div id="bookingSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+            <p class="eyebrow" id="selectedMeta">Услуга</p>
+            <h2 id="bookingTitle" class="serif">Запись</h2>
+            <p id="selectedDescription">Выберите, как удобнее продолжить запись.</p>
+            <div class="sheet-actions">
+                <a id="quickBooking" class="primary-button" href="#">Ближайшее время</a>
+                <a id="doctorBooking" class="ghost-button" href="#">Выбрать врача</a>
+                <button class="secondary-button" type="button" onclick="hideSheet('bookingSheet')">Остаться в каталоге</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="searchSheet" class="sheet-overlay" onclick="closeSheet(event)">
+        <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+            <h2 id="searchTitle" class="serif">Поиск услуги</h2>
+            <p>В прототипе поиск показан как будущий сценарий. Для согласования стиля используйте категории и карточки услуг.</p>
+            <button class="primary-button" type="button" style="width:100%;" onclick="hideSheet('searchSheet')">Понятно</button>
+        </div>
+    </div>
+
+    <script>
+        function filterServices(category, button) {
+            document.querySelectorAll('.chip').forEach((chip) => chip.classList.remove('active'));
+            button.classList.add('active');
+
+            document.querySelectorAll('.service-card').forEach((card) => {
+                card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+            });
+        }
+
+        function selectService(name, price, duration) {
+            document.getElementById('bookingTitle').textContent = name;
+            document.getElementById('selectedMeta').textContent = price + ' · ' + duration;
+            document.getElementById('selectedDescription').textContent = 'В полной версии запись будет синхронизироваться с YCLIENTS. Сейчас это демонстрация сценария.';
+            document.getElementById('quickBooking').href = 'visits.html?preview=booking&service=' + encodeURIComponent(name);
+            document.getElementById('doctorBooking').href = 'visits.html?preview=doctor&service=' + encodeURIComponent(name);
+            openSheet('bookingSheet');
+        }
+
+        function openSheet(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hideSheet(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closeSheet(event) {
+            if (event.target.classList.contains('sheet-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
