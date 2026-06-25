@@ -434,6 +434,19 @@ button {
     gap: 12px;
 }
 
+.highlight-card .row > div {
+    min-width: 0;
+}
+
+.highlight-card .row {
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.highlight-card .price {
+    margin-top: 2px;
+}
+
 .price {
     color: var(--champagne-dark);
     font-size: 25px;
@@ -498,8 +511,8 @@ button {
 }
 
 .service-card .price {
-    max-width: 96px;
-    font-size: 23px;
+    max-width: 112px;
+    font-size: 22px;
 }
 
 .service-meta,
