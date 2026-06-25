@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Concept 3</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum-concept3.css?v=20260625-c3">
+</head>
+<body>
+    <div class="c3-shell">
+        <header class="c3-topbar">
+            <a class="c3-logo-link" href="concept3.html" aria-label="Aurum concept 3">
+                <img class="c3-logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            </a>
+            <div class="c3-top-actions">
+                <button class="c3-icon-button" type="button" onclick="openPanel('qrPanel')" aria-label="Карта пациента">
+                    <i class="ph-light ph-qr-code"></i>
+                </button>
+                <a class="c3-icon-button c3-icon-button-accent" href="tel:+70000000000" aria-label="Позвонить в Aurum">
+                    <i class="ph-light ph-phone-call"></i>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="c3-hero">
+                <div class="c3-hero-media" aria-hidden="true"></div>
+                <div class="c3-hero-content">
+                    <h1 class="c3-serif">Ваш маршрут к спокойной улыбке</h1>
+                    <p>Личный кабинет Aurum собирает запись, визиты, документы и рекомендации в один понятный wellness-план.</p>
+                    <div class="c3-hero-actions">
+                        <a class="c3-primary" href="concept3-services.html">
+                            Записаться
+                            <i class="ph-light ph-arrow-right"></i>
+                        </a>
+                        <a class="c3-secondary" href="concept3-visits.html">Мои визиты</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="c3-section c3-care-plan" aria-labelledby="planTitle">
+                <div class="c3-section-title">
+                    <span>01</span>
+                    <h2 id="planTitle" class="c3-serif">Care plan</h2>
+                </div>
+                <article class="c3-plan-card">
+                    <div class="c3-plan-ring">
+                        <span class="c3-serif">68%</span>
+                        <small>план ухода</small>
+                    </div>
+                    <div class="c3-plan-copy">
+                        <h3 class="c3-serif">Профилактика</h3>
+                        <p>Следующий шаг — профессиональная гигиена и обновление домашнего ухода после консультации.</p>
+                        <a href="concept3-services.html?service=hygiene" class="c3-text-link">Выбрать время <i class="ph-light ph-arrow-right"></i></a>
+                    </div>
+                </article>
+            </section>
+
+            <section class="c3-section" aria-labelledby="directionsTitle">
+                <div class="c3-section-title">
+                    <span>02</span>
+                    <h2 id="directionsTitle" class="c3-serif">Направления</h2>
+                </div>
+                <div class="c3-direction-map">
+                    <a href="concept3-services.html?category=therapy" class="c3-direction">
+                        <i class="ph-light ph-tooth"></i>
+                        <span>
+                            <strong class="c3-serif">Терапия</strong>
+                            <small>Кариес, реставрации, консультации</small>
+                        </span>
+                    </a>
+                    <a href="concept3-services.html?category=hygiene" class="c3-direction">
+                        <i class="ph-light ph-sparkle"></i>
+                        <span>
+                            <strong class="c3-serif">Гигиена</strong>
+                            <small>Air Flow, полировка, профилактика</small>
+                        </span>
+                    </a>
+                    <a href="concept3-services.html?category=surgery" class="c3-direction">
+                        <i class="ph-light ph-pulse"></i>
+                        <span>
+                            <strong class="c3-serif">Хирургия</strong>
+                            <small>Имплантация и восстановление</small>
+                        </span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="c3-section" aria-labelledby="visitTitle">
+                <div class="c3-section-title">
+                    <span>03</span>
+                    <h2 id="visitTitle" class="c3-serif">Ближайший визит</h2>
+                </div>
+                <article class="c3-visit-preview">
+                    <time datetime="2026-07-18">
+                        <strong>18</strong>
+                        <span>июля</span>
+                    </time>
+                    <div>
+                        <h3 class="c3-serif">Профессиональная гигиена</h3>
+                        <p>12:30 · врач-гигиенист Э. Гасанова</p>
+                    </div>
+                    <a class="c3-round-link" href="concept3-visits.html" aria-label="Открыть визит">
+                        <i class="ph-light ph-arrow-right"></i>
+                    </a>
+                </article>
+            </section>
+        </main>
+
+        <nav class="c3-nav" aria-label="Основная навигация">
+            <a class="active" href="concept3.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+            <a href="concept3-services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Услуги</span></a>
+            <a href="concept3-visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+        </nav>
+    </div>
+
+    <div id="qrPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="qrTitle">
+            <h2 id="qrTitle" class="c3-serif">Карта пациента</h2>
+            <p>Покажите QR администратору, чтобы быстро открыть карту и рекомендации Aurum.</p>
+            <div class="c3-qr-box">
+                <i class="ph-light ph-qr-code"></i>
+            </div>
+            <button class="c3-primary" type="button" onclick="hidePanel('qrPanel')">Готово</button>
+        </div>
+    </div>
+
+    <script>
+        function openPanel(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hidePanel(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closePanel(event) {
+            if (event.target.classList.contains('c3-panel-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

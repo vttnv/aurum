@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Concept 3 Services</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum-concept3.css?v=20260625-c3">
+</head>
+<body>
+    <div class="c3-shell">
+        <header class="c3-topbar c3-page-topbar">
+            <a class="c3-icon-button" href="concept3.html" aria-label="Назад на главную">
+                <i class="ph-light ph-arrow-left"></i>
+            </a>
+            <img class="c3-logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            <button class="c3-icon-button c3-icon-button-accent" type="button" onclick="openPanel('searchPanel')" aria-label="Поиск услуги">
+                <i class="ph-light ph-magnifying-glass"></i>
+            </button>
+        </header>
+
+        <main>
+            <section class="c3-page-intro">
+                <h1 class="c3-serif">Каталог услуг</h1>
+                <p>Выберите направление лечения. Этот вариант показывает услуги как спокойный маршрут, а не как плотную витрину.</p>
+                <div class="c3-chip-line" aria-label="Фильтры категорий">
+                    <button class="active" type="button" onclick="filterServices('all', this)">Все</button>
+                    <button type="button" onclick="filterServices('therapy', this)">Терапия</button>
+                    <button type="button" onclick="filterServices('hygiene', this)">Гигиена</button>
+                    <button type="button" onclick="filterServices('orthopedics', this)">Ортопедия</button>
+                    <button type="button" onclick="filterServices('surgery', this)">Хирургия</button>
+                </div>
+            </section>
+
+            <section class="c3-section c3-service-route" aria-label="Список услуг">
+                <article class="c3-service-item" data-category="therapy">
+                    <div class="c3-service-index">01</div>
+                    <div class="c3-service-body">
+                        <div>
+                            <span class="c3-service-type">Терапия</span>
+                            <h2 class="c3-serif">Лечение кариеса</h2>
+                            <p>Восстановление зуба с подбором оттенка, анатомии и контактов.</p>
+                        </div>
+                        <div class="c3-service-meta">
+                            <span>~50 мин</span>
+                            <strong class="c3-serif">от 5 500 ₽</strong>
+                        </div>
+                        <button class="c3-primary" type="button" onclick="selectService('Лечение кариеса', 'от 5 500 ₽', '~50 мин')">Выбрать услугу</button>
+                    </div>
+                </article>
+
+                <article class="c3-service-item" data-category="hygiene">
+                    <div class="c3-service-index">02</div>
+                    <div class="c3-service-body">
+                        <div>
+                            <span class="c3-service-type">Гигиена</span>
+                            <h2 class="c3-serif">Профессиональная гигиена</h2>
+                            <p>Комплексная чистка, полировка эмали и домашние рекомендации.</p>
+                        </div>
+                        <div class="c3-service-meta">
+                            <span>~60 мин</span>
+                            <strong class="c3-serif">6 500 ₽</strong>
+                        </div>
+                        <button class="c3-primary" type="button" onclick="selectService('Профессиональная гигиена', '6 500 ₽', '~60 мин')">Выбрать услугу</button>
+                    </div>
+                </article>
+
+                <article class="c3-service-item" data-category="orthopedics">
+                    <div class="c3-service-index">03</div>
+                    <div class="c3-service-body">
+                        <div>
+                            <span class="c3-service-type">Ортопедия</span>
+                            <h2 class="c3-serif">Керамическая коронка</h2>
+                            <p>Эстетичное восстановление формы и функции с цифровым планом.</p>
+                        </div>
+                        <div class="c3-service-meta">
+                            <span>2 визита</span>
+                            <strong class="c3-serif">от 32 000 ₽</strong>
+                        </div>
+                        <button class="c3-primary" type="button" onclick="selectService('Керамическая коронка', 'от 32 000 ₽', '2 визита')">Выбрать услугу</button>
+                    </div>
+                </article>
+
+                <article class="c3-service-item" data-category="surgery">
+                    <div class="c3-service-index">04</div>
+                    <div class="c3-service-body">
+                        <div>
+                            <span class="c3-service-type">Хирургия</span>
+                            <h2 class="c3-serif">Имплантация</h2>
+                            <p>Планирование, установка импланта и контроль восстановления.</p>
+                        </div>
+                        <div class="c3-service-meta">
+                            <span>по плану</span>
+                            <strong class="c3-serif">от 45 000 ₽</strong>
+                        </div>
+                        <button class="c3-primary" type="button" onclick="selectService('Имплантация', 'от 45 000 ₽', 'по плану')">Выбрать услугу</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <nav class="c3-nav" aria-label="Основная навигация">
+            <a href="concept3.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+            <a class="active" href="concept3-services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Услуги</span></a>
+            <a href="concept3-visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+        </nav>
+    </div>
+
+    <div id="bookingPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+            <span id="selectedMeta" class="c3-service-type">Услуга</span>
+            <h2 id="bookingTitle" class="c3-serif">Запись</h2>
+            <p id="selectedDescription">Выберите удобный сценарий записи.</p>
+            <a id="quickBooking" class="c3-primary" href="#">Ближайшее время</a>
+            <a id="doctorBooking" class="c3-secondary" href="#">Выбрать врача</a>
+            <button class="c3-text-button" type="button" onclick="hidePanel('bookingPanel')">Остаться в каталоге</button>
+        </div>
+    </div>
+
+    <div id="searchPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+            <h2 id="searchTitle" class="c3-serif">Поиск услуги</h2>
+            <p>В полной версии здесь будет быстрый поиск по услугам, врачам и рекомендациям после визита.</p>
+            <button class="c3-primary" type="button" onclick="hidePanel('searchPanel')">Понятно</button>
+        </div>
+    </div>
+
+    <script>
+        function filterServices(category, button) {
+            document.querySelectorAll('.c3-chip-line button').forEach((chip) => chip.classList.remove('active'));
+            button.classList.add('active');
+            document.querySelectorAll('.c3-service-item').forEach((card) => {
+                card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+            });
+        }
+
+        function selectService(name, price, duration) {
+            document.getElementById('bookingTitle').textContent = name;
+            document.getElementById('selectedMeta').textContent = price + ' · ' + duration;
+            document.getElementById('selectedDescription').textContent = 'В полной версии запись синхронизируется с расписанием клиники.';
+            document.getElementById('quickBooking').href = 'concept3-visits.html?preview=booking&service=' + encodeURIComponent(name);
+            document.getElementById('doctorBooking').href = 'concept3-visits.html?preview=doctor&service=' + encodeURIComponent(name);
+            openPanel('bookingPanel');
+        }
+
+        function openPanel(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hidePanel(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closePanel(event) {
+            if (event.target.classList.contains('c3-panel-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

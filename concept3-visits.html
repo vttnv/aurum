@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aurum — Concept 3 Visits</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aurum-concept3.css?v=20260625-c3">
+</head>
+<body>
+    <div class="c3-shell">
+        <header class="c3-topbar c3-page-topbar">
+            <a class="c3-icon-button" href="concept3.html" aria-label="Назад на главную">
+                <i class="ph-light ph-arrow-left"></i>
+            </a>
+            <img class="c3-logo" src="assets/aurum-logo-light.webp" alt="Aurum Dental Wellness Center">
+            <a class="c3-icon-button c3-icon-button-accent" href="concept3-services.html" aria-label="Новая запись">
+                <i class="ph-light ph-plus"></i>
+            </a>
+        </header>
+
+        <main>
+            <section class="c3-page-intro">
+                <h1 class="c3-serif">Мои визиты</h1>
+                <p>Записи, документы и рекомендации собраны как последовательный маршрут лечения.</p>
+                <div class="c3-tabs" role="tablist">
+                    <button class="active" type="button" onclick="showVisitTab('upcoming', this)">Предстоящие</button>
+                    <button type="button" onclick="showVisitTab('history', this)">История</button>
+                </div>
+            </section>
+
+            <section id="upcoming" class="c3-section c3-visit-panel">
+                <article class="c3-next-visit">
+                    <div class="c3-next-date">
+                        <strong>18</strong>
+                        <span>июля</span>
+                    </div>
+                    <div class="c3-next-copy">
+                        <span class="c3-service-type">Подтверждено</span>
+                        <h2 class="c3-serif">Профессиональная гигиена</h2>
+                        <p>12:30 · врач-гигиенист Э. Гасанова · Aurum room 2</p>
+                    </div>
+                    <div class="c3-visit-actions">
+                        <button class="c3-primary" type="button" onclick="openPanel('reschedulePanel')">Перенести</button>
+                        <button class="c3-secondary" type="button" onclick="openPanel('callPanel')">Позвонить</button>
+                    </div>
+                </article>
+
+                <div class="c3-prep-list">
+                    <button type="button" onclick="openPanel('preparePanel')">
+                        <i class="ph-light ph-clipboard-text"></i>
+                        <span>
+                            <strong>Анкета перед визитом</strong>
+                            <small>Проверить аллергии и самочувствие</small>
+                        </span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </button>
+                    <button type="button" onclick="openPanel('cancelPanel')">
+                        <i class="ph-light ph-warning-circle"></i>
+                        <span>
+                            <strong>Отмена записи</strong>
+                            <small>Действие только демонстрационное</small>
+                        </span>
+                        <i class="ph-light ph-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section id="history" class="c3-section c3-visit-panel hidden">
+                <article class="c3-history-item">
+                    <time>02 июня</time>
+                    <div>
+                        <h2 class="c3-serif">Первичная консультация</h2>
+                        <p>План лечения готов, рекомендована профессиональная гигиена.</p>
+                    </div>
+                    <button class="c3-text-link" type="button" onclick="openPanel('documentsPanel')">Документы</button>
+                </article>
+                <article class="c3-history-item">
+                    <time>14 мая</time>
+                    <div>
+                        <h2 class="c3-serif">Лечение кариеса</h2>
+                        <p>Восстановление зуба 2.6, контроль по рекомендации врача.</p>
+                    </div>
+                    <button class="c3-text-link" type="button" onclick="openPanel('documentsPanel')">Рекомендации</button>
+                </article>
+            </section>
+        </main>
+
+        <nav class="c3-nav" aria-label="Основная навигация">
+            <a href="concept3.html"><i class="ph-light ph-house"></i><span>Главная</span></a>
+            <a href="concept3-services.html"><i class="ph-light ph-list-magnifying-glass"></i><span>Услуги</span></a>
+            <a class="active" href="concept3-visits.html"><i class="ph-light ph-calendar-check"></i><span>Визиты</span></a>
+        </nav>
+    </div>
+
+    <div id="reschedulePanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="rescheduleTitle">
+            <h2 id="rescheduleTitle" class="c3-serif">Перенести визит</h2>
+            <p>В полной версии приложение покажет свободные окна из расписания Aurum.</p>
+            <a class="c3-primary" href="concept3-services.html">Выбрать новое время</a>
+            <button class="c3-secondary" type="button" onclick="hidePanel('reschedulePanel')">Оставить как есть</button>
+        </div>
+    </div>
+
+    <div id="callPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="callTitle">
+            <h2 id="callTitle" class="c3-serif">Связаться с Aurum</h2>
+            <p>Администратор поможет уточнить подготовку к визиту, врача или время записи.</p>
+            <a class="c3-primary" href="tel:+70000000000">Позвонить</a>
+            <button class="c3-secondary" type="button" onclick="hidePanel('callPanel')">Закрыть</button>
+        </div>
+    </div>
+
+    <div id="preparePanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="prepareTitle">
+            <h2 id="prepareTitle" class="c3-serif">Перед визитом</h2>
+            <p>Заполните короткую анкету и предупредите врача об аллергиях или изменениях самочувствия.</p>
+            <button class="c3-primary" type="button" onclick="hidePanel('preparePanel')">Понятно</button>
+        </div>
+    </div>
+
+    <div id="cancelPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="cancelTitle">
+            <h2 id="cancelTitle" class="c3-serif">Отменить запись?</h2>
+            <p>В прототипе действие не отправляет данные в клинику.</p>
+            <button class="c3-danger" type="button" onclick="hidePanel('cancelPanel')">Отменить запись</button>
+            <button class="c3-secondary" type="button" onclick="hidePanel('cancelPanel')">Вернуться</button>
+        </div>
+    </div>
+
+    <div id="documentsPanel" class="c3-panel-overlay" onclick="closePanel(event)">
+        <div class="c3-panel" role="dialog" aria-modal="true" aria-labelledby="documentsTitle">
+            <h2 id="documentsTitle" class="c3-serif">Документы визита</h2>
+            <p>План лечения, рекомендации врача, счета и файлы после приема будут храниться здесь.</p>
+            <div class="c3-doc-list">
+                <button type="button"><span>План лечения.pdf</span><i class="ph-light ph-download-simple"></i></button>
+                <button type="button"><span>Рекомендации врача</span><i class="ph-light ph-download-simple"></i></button>
+            </div>
+            <button class="c3-primary" type="button" onclick="hidePanel('documentsPanel')">Готово</button>
+        </div>
+    </div>
+
+    <script>
+        function showVisitTab(id, button) {
+            document.querySelectorAll('.c3-tabs button').forEach((tab) => tab.classList.remove('active'));
+            button.classList.add('active');
+            document.querySelectorAll('.c3-visit-panel').forEach((panel) => panel.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function openPanel(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function hidePanel(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closePanel(event) {
+            if (event.target.classList.contains('c3-panel-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
